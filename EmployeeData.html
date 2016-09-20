@@ -10,18 +10,21 @@
 		<script  type="text/javascript" src="Src/View/View.js"></script>		
 		<script type="text/javascript">
 			function load(){				
-				var controllerObj=new Controller();            //Controller object
-				controllerObj.init();
+				var controller=new Controller();            //Controller object
+				controller.init();
 			}			
 		</script>
 	</head>
 	<body >	
 		<div id="employeeInput">			 
-		<span>Enter Name: </span><input type="text" name="EmployeeName" id="employeeTxt">
-		<input type="submit" value="Submit" onclick="load()">	
-		</div><br>
-		<div id="employeeDiv">			   	
-		</div>	
-		
+			<span>Enter Name: 
+				<input type="text" name="EmployeeName" id="employeeTxt">
+				<input type="submit" value="Submit" onclick="load()"> 
+			</span>			
+		</div>
+		&nbsp;
+		<div id="employeeDiv">	
+			
+		</div>		
 	</body >
 </html>

@@ -1,9 +1,9 @@
 
-	function Jsonservice(){
-
+function Employeeservice(){
+	
 	this.loadjsonData = function(){										//Loading Json Data..
-		var employeeData = JSON.parse(JSON.stringify(employeeJson));
-		return employeeData;
-		}	
-	}
+		var employee = JSON.parse(JSON.stringify(employeeData));
+		return employee;
+	}	
+}
 

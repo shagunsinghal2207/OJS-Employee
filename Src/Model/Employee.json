@@ -1,4 +1,4 @@
-employeeJson = [{
+employeeData = [{
     "id": "1",
     "name": "sushil",
     "Designation": "Consultant",

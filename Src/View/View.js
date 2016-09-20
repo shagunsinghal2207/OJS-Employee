@@ -1,8 +1,12 @@
 
-function View(){
+function View(){	
+	
+	this.View = function() {     
+       this.employeeName=document.getElementById('employeeTxt').value;	
+	   this.employeeDiv=document.getElementById("employeeDiv");     
+    }()
 
-	var employeeName=document.getElementById('employeeTxt').value;	
-	var employeeDiv=document.getElementById("employeeDiv");
+	
     var rowTemplate = "<table>"+
 				 	  "<tr>"+
 				      "<td><label for='empBand'>Employee Band:</label>"+"</td>"+               
@@ -22,62 +26,56 @@ function View(){
 				      "</tr>"+
 				      "</table>";
 
-// Loading Employee Data
+	// Loading Employee Data
 	this.loadRow = function(rowData){			
 		this.loadEmpdata(rowData);		
 	}
 
-	this.loadEmpdata = function(rowData){		
+	this.loadEmpdata = function(employeeData){		
 		employeeDiv.innerHTML='';
-		var newRowtemplate = rowTemplate.replace("BandValue",this.getEmployeeband(rowData));
-		newRowtemplate = newRowtemplate.replace("SalaryValue",this.getEmployeesalary(rowData));
-		newRowtemplate = newRowtemplate.replace("DesignationValue",this.getEmployeedesignation(rowData));
-		newRowtemplate = newRowtemplate.replace("ProjectValue",this.getEmployeeproject(rowData));			
-		employeeDiv.innerHTML += newRowtemplate;	
-
+		var newRowtemplate = rowTemplate.replace("BandValue", this.getEmployeeband(employeeData));
+		newRowtemplate = newRowtemplate.replace("SalaryValue", this.getEmployeesalary(employeeData));
+		newRowtemplate = newRowtemplate.replace("DesignationValue", this.getEmployeedesignation(employeeData));
+		newRowtemplate = newRowtemplate.replace("ProjectValue", this.getEmployeeproject(employeeData));			
+		employeeDiv.innerHTML += newRowtemplate;
 	}
 
-//Get Employee Band
-	this.getEmployeeband=function(rowData){		
-		for (var i = 0; i < rowData.length; i++){
-			 if (rowData[i].name == employeeName){
-			 	return rowData[i].Band;
-			 }
+	//Get Employee Band
+	this.getEmployeeband = function(employeeData){		
+		for (var i = 0; i < employeeData.length; i++){
+			if (employeeData[i].name == employeeName){
+			 	return employeeData[i].Band;
+			}
 			 
 		}
 	}
 
-//Get Employee Designation
-	this.getEmployeedesignation=function(rowData){		
-		for (var i = 0; i < rowData.length; i++){
-			 if (rowData[i].name == employeeName){
-			 	return rowData[i].Designation;
-			 }
+	//Get Employee Designation
+	this.getEmployeedesignation = function(employeeData){		
+		for (var i = 0; i < employeeData.length; i++){
+			if (employeeData[i].name == employeeName){
+			 	return employeeData[i].Designation;
+			}
 		}
 	}
 
-//Get Employee Salary
-	this.getEmployeesalary=function(rowData){		
-		for (var i = 0; i < rowData.length; i++){
-			 if (rowData[i].name == employeeName){
-			 	return rowData[i].Salary;
-			 }
+	//Get Employee Salary
+	this.getEmployeesalary = function(employeeData){		
+		for (var i = 0; i < employeeData.length; i++){
+			if (employeeData[i].name == employeeName){
+			 	return employeeData[i].Salary;
+			}
 		}
 	}
 
-//Get Employee Project
-	this.getEmployeeproject=function(rowData){		
-		for (var i = 0; i < rowData.length; i++){
-			 if (rowData[i].name == employeeName){
-			 	return rowData[i].Project;
-			 }
+	//Get Employee Project
+	this.getEmployeeproject = function(employeeData){		
+		for (var i = 0; i < employeeData.length; i++){
+			if (employeeData[i].name == employeeName){
+			 	return employeeData[i].Project;
+			}
 		}
-
-
-	}
-
-
-	
+	}	
 }
 
 

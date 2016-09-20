@@ -1,10 +1,10 @@
 
-function Controller(){
-    
+function Controller(){  
+  
 	this.init=function(){
-		var jsonObj = new Jsonservice();   				  //JsonService object
-		var jsonData = jsonObj.loadjsonData();		
-		var viewObj = new View();		                 //View object
-		viewObj.loadRow(jsonData);
+		var json = new Employeeservice();   				  //JsonService object
+		var jsonData = json.loadjsonData();		
+		var view = new View();		                 //View object
+		view.loadRow(jsonData);
 	}	
-};
+}
